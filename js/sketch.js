@@ -2,14 +2,17 @@ var startScreen;
 var startButton;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
-  startScreen = loadImage("assets/AnimatedSupermarket.gif");
-  startButton = loadImage("assets/startbutton.png")
+  createCanvas(windowWidth, windowHeight, WEBGL).position(0, 0);
 }
 
 function draw() {
-  image(startScreen, 0, 0, windowWidth, windowHeight);
-  image(startButton, windowWidth / 2 - 100, windowHeight / 2 - 50, 100, 50);
+  background(15);
+  box(0, 0, 0, 0);
+  moveCamera(0, 0, 0, 1, 0, 0);
+}
+
+function preload() {
+  loadModel('assets/objects/supermarket.obj');
 }
 
 function windowResized() {
