@@ -1,18 +1,19 @@
-var startScreen;
-var startButton;
+var thingy;
+var world;
 
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL).position(0, 0);
+  loop();
 }
 
 function draw() {
   background(15);
-  box(0, 0, 0, 0);
-  moveCamera(0, 0, 0, 1, 0, 0);
+  model(world);
+  camera(0, 0, sin(frameCount * 0.01) * 100);
 }
 
 function preload() {
-  loadModel('assets/objects/supermarket.obj');
+  world = loadModel('assets/objects/supermarket.obj');
 }
 
 function windowResized() {
